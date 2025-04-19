@@ -26,10 +26,17 @@
 }
 
 .sidenav a {
-  color: white;
-  font-size: 18px;
-  margin: 10px 0;
-  text-decoration: none;
+  display: flex;
+  align-items: center; /* Alinha o ícone e o texto verticalmente */
+  padding: 10px 20px; /* Espaçamento interno */
+  text-decoration: none; /* Remove o sublinhado dos links */
+  color: white; /* Cor do texto */
+  font-size: 18px; /* Tamanho do texto */
+}
+
+.sidenav a i {
+  margin-right: 15px; /* Espaço entre o ícone e o texto */
+  font-size: 24px; /* Tamanho do ícone */
 }
 
 .sidenav a:hover {
@@ -56,10 +63,13 @@
 
 /* Exemplo de estilo genérico */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 100vh; /* Define a altura da tela */
+  background-color: #f3f3f3; /* Cor de fundo */
 }
 
 h1 {
@@ -75,12 +85,12 @@ p {
 }
 
 .profile-circle {
-  width: 150px;
-  height: 150px;
-  margin: 20px auto; /* Centraliza a imagem no menu */
-  border: 4px solid white; /* Adiciona uma borda branca */
+  width: 140px; /* Aumenta o tamanho do círculo */
+  height: 140px; /* Aumenta o tamanho do círculo */
+  margin: 20px auto; /* Centraliza o círculo no menu */
+  border: 4px solid white; /* Borda branca */
   overflow: hidden; /* Garante que a imagem fique dentro do círculo */
-  border-radius: 50%; /* Garante que o contorno seja circular */
+  border-radius: 50%; /* Deixa o contorno circular */
 }
 
 .profile-circle img {
@@ -324,4 +334,23 @@ table td:hover {
   background-color: #bdbdbd !important; /* Cinza médio para o cabeçalho */
   color: #000 !important; /* Texto preto no cabeçalho */
   font-weight: bold; /* Deixa o texto do cabeçalho em negrito */
+}
+
+/* Estilo para o contêiner de imagem */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px; /* Largura do contêiner */
+  height: 300px; /* Altura do contêiner */
+  background-color: white; /* Fundo branco */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.rounded-image {
+  width: 100%; /* A imagem ocupa toda a largura do contêiner */
+  height: 100%; /* A imagem ocupa toda a altura do contêiner */
+  object-fit: cover; /* Ajusta a imagem para cobrir o contêiner sem distorção */
+  border-radius: 15px; /* Bordas arredondadas da imagem */
 }

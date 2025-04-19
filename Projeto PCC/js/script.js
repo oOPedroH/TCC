@@ -196,26 +196,3 @@ document.addEventListener('DOMContentLoaded', () => {
     clientesCadastradosTbody.appendChild(row);
   });
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-  const clientesCadastradosTbody = document.getElementById('clientes-cadastrados-tbody');
-
-  // Exemplo de dados fictícios (substitua pelos dados do banco no futuro)
-  const clientes = [
-    { id: 1, nome: 'João Silva', cpf: '123.456.789-00', numero: '(11) 98765-4321' },
-    { id: 2, nome: 'Maria Oliveira', cpf: '987.654.321-00', numero: '(21) 91234-5678' },
-    { id: 3, nome: 'Carlos Santos', cpf: '456.789.123-00', numero: '(31) 99876-5432' },
-  ];
-
-  // Preenche a tabela com os dados
-  clientes.forEach(cliente => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${cliente.id}</td>
-      <td>${cliente.nome}</td>
-      <td>${cliente.cpf}</td>
-      <td>${cliente.numero}</td>
-    `;
-    clientesCadastradosTbody.appendChild(row);
-  });
-});

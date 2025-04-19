@@ -10,6 +10,23 @@
   <link href="css/style.css" rel="stylesheet">
   <!-- Ícones do Materialize -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+  </style>
 </head>
 <body>
   <!-- Botão para abrir o menu lateral -->
@@ -20,51 +37,55 @@
   <!-- Menu Lateral Vertical -->
   <div class="menu-overlay" id="menu-overlay"></div>
   <div class="sidenav" id="sidenav">
-    <h5 class="user-name">Menu</h5>
+    <a href="Index.html" class="menu-link">
+      <i class="material-icons">home</i> Menu
+    </a>
+
+    <!-- Círculo de Foto -->
     <div class="profile-circle">
-      <img src="https://via.placeholder.com/150" alt="Foto de Perfil" class="circle">
+      <img src="imagens/img3.jpg" alt="Foto de Perfil">
     </div>
-    <a href="TelaAnotacao.html" class="menu-link">Anotações</a>
-    <a href="TelaAgenda.html" class="menu-link">Agenda</a>
-    <a href="TelaClientes.html" class="menu-link">Clientes</a>
-    <a href="#config" class="menu-link">Configurações</a>
-    <a href="#sair" class="menu-link">Sair</a>
+
+    <a href="TelaAnotacao.html" class="menu-link">
+      <i class="material-icons">note</i> Anotações
+    </a>
+    <a href="TelaAgenda.html" class="menu-link">
+      <i class="material-icons">event</i> Agenda
+    </a>
+    <a href="TelaClientes.html" class="menu-link">
+      <i class="material-icons">people</i> Clientes
+    </a>
+    <a href="#config" class="menu-link">
+      <i class="material-icons">settings</i> Configurações
+    </a>
+    <a href="Tela.Login.html" class="menu-link">
+      <i class="material-icons">logout</i> Sair
+    </a>
   </div>
 
   <!-- Conteúdo da Tela Clientes -->
   <div class="striped">
-    <h1>Clientes</h1>
+    <h1>Lista de Clientes</h1>
     <!-- Tabela de Clientes Cadastrados -->
     <div class="clients-table">
-      <h2>Clientes Cadastrados</h2>
-      <table class="striped centered">
+      <table>
         <thead>
           <tr>
-            <th>#ID</th>
+            <th>ID</th>
             <th>Nome</th>
             <th>CPF</th>
             <th>Número</th>
           </tr>
         </thead>
         <tbody>
+          {% for cliente in clientes %}
           <tr>
-            <td>1</td>
-            <td>João Silva</td>
-            <td>123.456.789-00</td>
-            <td>(11) 98765-4321</td>
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.cpf }}</td>
+            <td>{{ cliente.numero }}</td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>Maria Oliveira</td>
-            <td>987.654.321-00</td>
-            <td>(21) 91234-5678</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Carlos Santos</td>
-            <td>456.789.123-00</td>
-            <td>(31) 99876-5432</td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
